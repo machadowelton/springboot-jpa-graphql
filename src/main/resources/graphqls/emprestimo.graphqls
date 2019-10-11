@@ -1,0 +1,13 @@
+
+
+type Emprestimo {
+	id: Int,
+    datRetirada: String,
+    datDevolucao: String,
+    livros: [Livro]
+}
+
+input EmprestimorInput {
+     datRetirada: String,
+     datDevolucao: String,
+}

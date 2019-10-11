@@ -1,0 +1,12 @@
+type Livro {
+	id: Int,
+    desTituloLivro: String,
+    desSinopse: String,
+    nomAutor: String
+}
+
+input LivroInput {
+    desTituloLivro: String,
+    desSinopse: String,
+    nomAutor: String
+}

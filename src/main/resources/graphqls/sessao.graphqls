@@ -1,0 +1,11 @@
+type Sessao {
+	id: Int,
+    desSessao: String,
+    desLocalizacao: String
+    livros: [Livro]
+}
+
+input SessaoInput {
+    desSessao: String,
+    desLocalizacao: String
+}

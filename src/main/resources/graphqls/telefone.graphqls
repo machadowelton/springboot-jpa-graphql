@@ -1,0 +1,15 @@
+type Telefone {
+    numDDI: Int,
+    numDDD: Int,
+    numTelefone: Long,
+    tpoTelefone: String,
+    tpoUsoTelefone: String
+}
+
+input TelefoneInput {
+    numDDI: Int,
+    numDDD: Int,
+    numTelefone: Long,
+    tpoTelefone: String,
+    tpoUsoTelefone: String
+}

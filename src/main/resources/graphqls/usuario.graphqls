@@ -1,0 +1,14 @@
+
+
+type Usuario {
+	id: Int,
+    nomUsuario: String,
+    datNascimento: String,
+    telefone: Telefone
+}
+
+input UsuarioInput {
+    nomUsuario: String,
+    datNascimento: DateTime,
+    telefone: TelefoneInput
+}

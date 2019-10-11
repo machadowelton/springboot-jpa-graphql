@@ -1,0 +1,7 @@
+type Query {
+    buscarUsuarioPorId(id: Int): Usuario
+}
+
+type Mutation {
+    inserirUsuario(usuario: UsuarioInput): Usuario
+}
