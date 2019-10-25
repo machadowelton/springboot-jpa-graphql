@@ -1,10 +1,11 @@
 package br.com.machadowelton.services.imp;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import br.com.machadowelton.models.Usuario;
 import br.com.machadowelton.models.exception.NegocioException;
@@ -13,7 +14,7 @@ import br.com.machadowelton.services.abs.SuperAbs;
 import br.com.machadowelton.services.repository.UsuarioRepository;
 
 
-@Service
+@Component
 public class UsuarioServiceImp extends SuperAbs<UsuarioRepository> implements IUsuarioService {
 
 	@Override
@@ -37,11 +38,19 @@ public class UsuarioServiceImp extends SuperAbs<UsuarioRepository> implements IU
 		logger.info("metodo=listarPaginado, usuarios=" + usuarios);
 		return usuarios;
 	}
+	
+	public List<Usuario> listarTodos() {
+		return repository.findAll();
+	}
 
 	@Override
 	public Usuario inserir(Usuario t) {
-		logger.info("metodo=inserir, usuario=" + t);
-		return repository.save(t);
+		logger.info("metodo=inserir, " + t);
+		return Optional.of(repository.save(t))
+				.map( usuario -> {
+					logger.info("metodo=inserir, " + usuario);
+					return usuario;
+				}).orElseThrow(() -> new NegocioException("Erro ao persistir o usuario"));
 	}
 
 	@Override

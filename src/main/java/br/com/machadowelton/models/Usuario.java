@@ -13,11 +13,17 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import br.com.machadowelton.models.audit.AuditModel;
 import br.com.machadowelton.models.emb.Telefone;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
+@Data
+@Builder(toBuilder = true)
+@EqualsAndHashCode(callSuper = true)
+@ToString
 @Entity
 public class Usuario extends AuditModel {
 	
@@ -41,48 +47,5 @@ public class Usuario extends AuditModel {
 	private Telefone telefone;
 	
 	@Temporal(TemporalType.DATE)
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date datNascimento;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNomUsuario() {
-		return nomUsuario;
-	}
-
-	public void setNomUsuario(String nomUsuario) {
-		this.nomUsuario = nomUsuario;
-	}
-
-	public Telefone getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(Telefone telefone) {
-		this.telefone = telefone;
-	}
-
-	public Date getDatNascimento() {
-		return datNascimento;
-	}
-
-	public void setDatNascimento(Date datNascimento) {
-		this.datNascimento = datNascimento;
-	}
-	
-	public String toString() {
-		return "["
-				+ "id=" + this.id
-				+ ", nomUsuario=" + this.nomUsuario
-				+ ", datNascimento=" + this.datNascimento
-				+ ", telefone=" + this.telefone
-				+ "]";
-	}
-	
 }

@@ -1,4 +1,5 @@
-
+# java.util.Date implementation
+scalar Date
 
 type Usuario {
 	id: Int,
@@ -9,6 +10,6 @@ type Usuario {
 
 input UsuarioInput {
     nomUsuario: String,
-    datNascimento: DateTime,
+    datNascimento: Date,
     telefone: TelefoneInput
 }

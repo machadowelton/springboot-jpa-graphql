@@ -1,9 +1,10 @@
-
+# java.util.Date implementation
+scalar Date
 
 type Emprestimo {
 	id: Int,
-    datRetirada: String,
-    datDevolucao: String,
+    datRetirada: Date,
+    datDevolucao: Date,
     livros: [Livro]
 }
 

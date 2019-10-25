@@ -1,5 +1,7 @@
 package br.com.machadowelton.resolver;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +24,10 @@ public class UsuarioResolver implements GraphQLQueryResolver, GraphQLMutationRes
 	
 	public Usuario inserirUsuario(Usuario usuario) {
 		return service.inserir(usuario);
+	}
+	
+	public List<Usuario> listarTodos() {
+		return service.listarTodos();
 	}
 	
 }

@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import br.com.machadowelton.models.Livro;
 import br.com.machadowelton.models.exception.NegocioException;
@@ -14,7 +14,7 @@ import br.com.machadowelton.services.abs.SuperAbs;
 import br.com.machadowelton.services.repository.LivroRepository;
 import br.com.machadowelton.services.repository.SessaoRepository;
 
-@Service
+@Component
 public class LivroServiceImp extends SuperAbs<LivroRepository> implements ILivroService {
 
 	@Autowired

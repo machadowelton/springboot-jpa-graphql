@@ -1,5 +1,6 @@
 type Query {
-    buscarUsuarioPorId(id: Int): Usuario
+    buscarUsuarioPorId(id: Int): Usuario,
+    listarTodos: [Usuario]
 }
 
 type Mutation {

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import br.com.machadowelton.models.Sessao;
 import br.com.machadowelton.models.exception.NegocioException;
@@ -12,7 +12,7 @@ import br.com.machadowelton.services.ISessaoService;
 import br.com.machadowelton.services.abs.SuperAbs;
 import br.com.machadowelton.services.repository.SessaoRepository;
 
-@Service
+@Component
 public class SessaoServiceImp extends SuperAbs<SessaoRepository> implements ISessaoService {
 
 	@Override

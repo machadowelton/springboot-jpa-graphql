@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import br.com.machadowelton.models.Emprestimo;
 import br.com.machadowelton.models.Livro;
@@ -16,7 +16,7 @@ import br.com.machadowelton.services.repository.EmprestimoRepository;
 import br.com.machadowelton.services.repository.LivroRepository;
 import br.com.machadowelton.services.repository.UsuarioRepository;
 
-@Service
+@Component
 public class EmprestimoServiceImp extends SuperAbs<EmprestimoRepository> implements IEmprestimoService {
 	
 	@Autowired

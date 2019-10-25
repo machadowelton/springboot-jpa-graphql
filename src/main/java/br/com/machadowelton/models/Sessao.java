@@ -11,7 +11,13 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.GenericGenerator;
 
 import br.com.machadowelton.models.audit.AuditModel;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+@Data
+@Builder(toBuilder = true)
+@EqualsAndHashCode(callSuper = true)
 @Entity
 public class Sessao extends AuditModel {
 	
@@ -38,45 +44,4 @@ public class Sessao extends AuditModel {
 	@NotBlank
 	private String desLocalizacao;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNomSessao() {
-		return nomSessao;
-	}
-
-	public void setNomSessao(String nomSessao) {
-		this.nomSessao = nomSessao;
-	}
-
-	public String getDesSessao() {
-		return desSessao;
-	}
-
-	public void setDesSessao(String desSessao) {
-		this.desSessao = desSessao;
-	}
-
-	public String getDesLocalizacao() {
-		return desLocalizacao;
-	}
-
-	public void setDesLocalizacao(String desLocalizacao) {
-		this.desLocalizacao = desLocalizacao;
-	}
-	
-	public String toString() {
-		return "["
-				+ "id=" + this.id
-				+ ", nomSessao=" + this.nomSessao
-				+ ", desSessao=" + this.desSessao
-				+ ", desLocalizao=" + this.desLocalizacao
-				+ "]";
-	}
-	
 }

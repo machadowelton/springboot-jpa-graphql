@@ -28,7 +28,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import br.com.machadowelton.models.audit.AuditModel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+@ToString
 @Entity
 public class Emprestimo extends AuditModel {
 
@@ -70,53 +80,5 @@ public class Emprestimo extends AuditModel {
 	            joinColumns = { @JoinColumn(name = "emprestimo_id") },
 	            inverseJoinColumns = { @JoinColumn(name = "livro_id") })
 	 private Set<Livro> livros = new HashSet<>();
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Date getDatRetirada() {
-		return datRetirada;
-	}
-
-	public void setDatRetirada(Date datRetirada) {
-		this.datRetirada = datRetirada;
-	}
-
-	public Date getDatDevolucao() {
-		return datDevolucao;
-	}
-
-	public void setDatDevolucao(Date datDevolucao) {
-		this.datDevolucao = datDevolucao;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-
-	public Set<Livro> getLivros() {
-		return livros;
-	}
-
-	public void setLivros(Set<Livro> livros) {
-		this.livros = livros;
-	}
-	 
-	public String toString() {
-		return "["
-				+ "id=" + this.id
-				+ ", datRetirada=" + this.datRetirada
-				+ ", datDevolucao=" + this.datDevolucao
-				+ "]";
-	}
 	
 }
